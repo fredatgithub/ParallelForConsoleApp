@@ -83,7 +83,17 @@ namespace ParallelForConsoleApp
         return false;
       }
 
-      for (var divisor = 2; divisor <= Math.Sqrt(number); divisor++)
+      if (number == 2 || number == 3 || number == 5 || number == 7)
+      {
+        return true;
+      }
+
+      if (number % 2 == 0)
+      {
+        return false;
+      }
+
+      for (var divisor = 3; divisor <= Math.Sqrt(number); divisor += 2)
       {
         if (number % divisor == 0)
         {
