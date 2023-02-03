@@ -34,7 +34,12 @@ namespace ParallelForConsoleApp
 
       Console.WriteLine("");
       Console.WriteLine($"Parallel.ForEach loop  | Total prime numbers : {primeNumbersFromParallelForeach.Count} | Time Taken : {watchForParallel.ElapsedMilliseconds} ms.");
+      foreach (int number in primeNumbersFromParallelForeach.Where(n => n < 80).OrderBy(n => n))
+      {
+        Console.Write($"{number} ");
+      }
 
+      Console.WriteLine("");
       Console.WriteLine("Press any key to exit.");
       Console.ReadLine();
     }
